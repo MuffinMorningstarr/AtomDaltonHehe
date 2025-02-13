@@ -1,0 +1,358 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: "Poppins", sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+:root {
+    --bg-color: black;
+    --second-bg-color: black;
+    --text-color: #E2F3F4;
+    --main-color: #6DC7D1;
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 10%;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+#menu-icon {
+    font-size: 3.6rem;
+    color: var(--text-color);
+    display: none;
+}
+
+@media(max-width:1024px) {
+    #menu-icon {
+        display: block;
+    }
+    .navbar {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 50%;
+        padding: 1rem 3rem;
+        background-color: rgba(0, 0, 0, 0.8);
+        border-left: 2px solid var(--main-color);
+        border-bottom: 2px solid var(--main-color);
+        border-bottom-left-radius: 2rem;
+        display: none;
+    }
+    .navbar a {
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+        color: var(--text-color);
+    }
+    .navbar.active {
+        display: block;
+    }
+    .home {
+        flex-direction: column-reverse;
+        margin: 5rem 0;
+        gap: 5rem;
+    }
+    .home-content {
+        text-align: center; /* Memastikan semua konten di dalamnya berada di tengah */
+    }
+    .home-img img {
+        width: 52vw;
+    }
+    .about {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+    .about h2 {
+        text-align: center;
+        margin: 2rem 0;
+    }
+    .about img {
+        width: 52vw;
+    }
+    .portfolio-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .portfolio-box {
+        flex: 1 1 30%;
+        height: 25rem;
+        max-width: 30%;
+    }
+    .portfolio-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 3rem;
+    color: var(--text-color);
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.logo-img {
+    width: 5rem;
+    height: auto;
+    margin-right: 1.2rem;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+span {
+    color: var(--main-color);
+}
+
+.navbar a {
+    font-size: 1.8rem;
+    color: var(--text-color);
+    font-weight: 500;
+    margin-left: 3rem;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.navbar a:hover {
+    color: var(--main-color);
+    border-bottom: 3px solid var(--main-color);
+}
+
+section {
+    min-height: 100vh;
+    padding: 10rem 10%;
+}
+
+.home {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Memisahkan teks dan gambar */
+    margin-top: 8rem;
+    gap: 15rem;
+}
+
+
+
+.home-content h1 {
+    font-size: clamp(4rem, 8vw, 8rem);
+    font-weight: 700;
+    margin-bottom: 1rem; /* Memberikan jarak antara "Muffinzz" dan teks tambahan */
+}
+
+.home-content p {
+    font-size: 1.6rem;
+    line-height: 1.8;
+    max-width: 600px;
+    margin: 2rem auto;
+}
+
+.home-content .subheading {
+    font-size: 2rem; /* Ukuran font */
+    color: var(--main-color); /* Warna teks */
+    margin-bottom: 2rem; /* Jarak antara teks tambahan dan paragraf */
+    font-weight: 500; /* Ketebalan font */
+    text-transform: uppercase; /* Mengubah teks menjadi huruf kapital */
+    letter-spacing: 0.1rem; /* Spasi antar huruf */
+}
+
+.social-icons a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    padding: 1rem;
+    background: transparent;
+    border: 2px solid var(--main-color);
+    border-radius: 50%;
+    color: var(--main-color);
+    margin: 2rem 0.5rem;
+    transition: transform 0.3s ease, box-shadow 0.5s ease;
+}
+
+.social-icons a:hover {
+    color: var(--text-color);
+    background-color: var(--main-color);
+    transform: scale(1.2);
+    box-shadow: 0 0 15px var(--main-color);
+}
+
+.music-button {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: transparent;
+    color: var(--text-color);
+    border: 2px solid var(--main-color);
+    border-radius: 50%;
+    padding: 1rem;
+    font-size: 2.4rem;
+    cursor: pointer;
+    z-index: 1000;
+    display: none;
+    box-shadow: 0 0 15px var(--main-color);
+}
+
+.music-button:hover {
+    box-shadow: 0 0 20px var(--main-color), 0 0 50px var(--main-color);
+}
+
+.music-button.show {
+    display: block;
+}
+
+.home-img img {
+    width: 23vw;
+    height: 23vw; /* Pastikan tinggi dan lebar sama untuk bentuk oval sempurna */
+    border-radius: 50%; /* Membuat gambar berbentuk oval */
+    object-fit: cover; /* Memastikan gambar menutupi area tanpa distorsi */
+    object-position: top; /* Fokus pada bagian kepala gambar */
+    box-shadow: 0 0 25px var(--main-color);
+    transition: 0.4s ease-in-out;
+    animation: floatImage 4s ease-in-out infinite;
+}
+
+.home-img img:hover {
+    box-shadow: 0 0 25px var(--main-color), 0 0 50px var(--main-color), 0 0 100px var(--main-color);
+}
+
+.footer {
+    background-color: var(--bg-color);
+    padding: 50px 0;
+}
+
+.footer ul {
+    text-align: center;
+    font-size: 1.8rem;
+}
+
+.footer ul li {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.footer ul li a {
+    color: white;
+    border-bottom: 3px solid transparent;
+    transition: 0.3s ease-in-out;
+}
+
+.footer ul li a:hover {
+    border-bottom: 3px solid var(--main-color);
+}
+
+footer.footer {
+    visibility: visible;
+    opacity: 1;
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0);
+    transition: all, opacity 2s cubic-bezier(0.5, 0, 0, 1) 0.2s, transform 2s cubic-bezier(0.5, 0, 0, 1) 0,2s;
+}
+
+.footer .copyright {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 16px;
+}
+
+.about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10rem;
+    background-color: var(--second-bg-color);
+}
+
+.about {
+    flex-direction: column-reverse;
+    text-align: center;
+}
+
+.about-img img {
+    width: 33vw;
+    height: 33vw; /* Pastikan tinggi dan lebar sama untuk bentuk oval sempurna */
+    border-radius: 50%; /* Membuat gambar berbentuk oval */
+    object-fit: cover; /* Memastikan gambar menutupi area tanpa distorsi */
+    object-position: center; /* Fokus pada bagian kepala gambar */
+    box-shadow: 0 0 25px var(--main-color);
+    transition: 0.4s ease-in-out;
+    animation: floatImage 4s ease-in-out infinite;
+}
+
+.about-img {
+    width: 32vw;
+    border-radius: 50%;
+    box-shadow: 0 0 25px var(--main-color);
+    transition: 0.4s ease-in-out;
+    animation: floatImage 4s ease-in-out infinite;
+}
+
+.about-img img:hover {
+    box-shadow: 0 0 25px var(--main-color), 0 0 50px var(--main-color), 0 0 100px var(--main-color);
+}
+
+.about h2 {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.about-content h2 {
+    text-align: center;
+    font-size: 7rem;
+}
+
+.about-content p {
+    font-size: 1.8rem;
+}
+
+.about-content .btn {
+    margin: 3rem 0;
+}
+
+.btn-groub {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 1rem 3rem;
+    background: var(--main-color);
+    box-shadow: 0 0 25px var(--main-color);
+    border-radius: 3rem;
+    font-size: 1.8rem;
+    color: black;
+    border: 2px solid transparent;
+    font-weight: 600;
+    transition: 0.3s ease-in-out;
+} 
